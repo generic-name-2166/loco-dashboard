@@ -3,7 +3,7 @@ import pandas as pd
 
 def main() -> None:
     df = pd.read_csv("data/0_loco_19.tsv", delimiter="\t")
-    columns = {
+    """ columns = {
         "loco_19.ctime",
         "loco_19.dan_type",
         "loco_19.ser_loc",
@@ -55,7 +55,7 @@ def main() -> None:
         "loco_19.cta",
         "loco_19.otp_tch",
         "loco_19.ekspl",
-    }
+    } """
     date_columns = {
         "loco_19.p_vyh_tch",
         "loco_19.p_prib_zav",
