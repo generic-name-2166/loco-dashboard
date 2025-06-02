@@ -2,7 +2,7 @@ import pandas as pd
 
 
 def main() -> None:
-    df = pd.read_csv("data/0_loco_19.tsv", delimiter="\t")
+    df = pd.read_csv("data/0_loco_19.tsv", delimiter="\t")  # pyright:ignore[reportUnknownMemberType]
     """ columns = {
         "loco_19.ctime",
         "loco_19.dan_type",
@@ -101,11 +101,13 @@ def main() -> None:
         "loco_19.otp_tch",
         "loco_19.ekspl",
     }
-    print(df.iat[1, 49])
-    df["loco_19.ctime"] = pd.to_datetime(df["loco_19.ctime"], format="%Y-%m-%d %H:%M:%S.%f")
+    print(df.iat[1, 49])  # pyright:ignore[reportUnknownMemberType,reportUnknownArgumentType]
+    df["loco_19.ctime"] = pd.to_datetime(  # pyright:ignore[reportUnknownMemberType]
+        df["loco_19.ctime"], format="%Y-%m-%d %H:%M:%S.%f"
+    )
     for date_column in date_columns:
-        df[date_column] = pd.to_datetime(df[date_column])
-    print(df.iat[1, 49])
+        df[date_column] = pd.to_datetime(df[date_column])  # pyright:ignore[reportUnknownMemberType]
+    print(df.iat[1, 49])  # pyright:ignore[reportUnknownMemberType,reportUnknownArgumentType]
     # df = pd.read_csv("data/1_loco_19.tsv", delimiter="\t")
     # df.info()
 
