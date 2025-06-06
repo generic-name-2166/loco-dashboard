@@ -193,6 +193,8 @@ def read_tsv(path: Path) -> pd.DataFrame:
     )
     for date_column in DATE_COLUMNS:
         df[date_column] = pd.to_datetime(df[date_column])  # pyright:ignore[reportUnknownMemberType]
+
+    df["id"] = df.groupby(["ser_loc", "zns_loc", "prs_loc"]).ngroup()  # pyright:ignore[reportUnknownMemberType]
     return df
 
 
